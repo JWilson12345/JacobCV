@@ -675,7 +675,28 @@ a:hover{ text-decoration: underline; }
     transform: translateX(-110%);
     transition: transform 0.28s ease;
     border-radius: 0;
+
+    /* ✅ ADD THESE LINES */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 24px;
   }
+
+  /* when open */
+  body.sidebar-open .sidebar{
+    transform: translateX(0);
+  }
+
+  body.sidebar-open .backdrop{
+    display: block;
+    opacity: 1;
+  }
+
+  /* prevent background scrolling when menu open */
+  body.sidebar-open{
+    overflow: hidden;
+  }
+}
 
   /* when open */
   body.sidebar-open .sidebar{
