@@ -657,7 +657,6 @@ a:hover{ text-decoration: underline; }
     justify-content: center;
   }
 
-  /* let main take full width */
   .page{
     grid-template-columns: 1fr;
   }
@@ -671,18 +670,18 @@ a:hover{ text-decoration: underline; }
     max-width: 86vw;
     z-index: 1000;
 
-    /* start hidden */
     transform: translateX(-110%);
     transition: transform 0.28s ease;
     border-radius: 0;
 
-    /* ✅ ADD THESE LINES */
     overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
     padding-bottom: 24px;
   }
 
-  /* when open */
   body.sidebar-open .sidebar{
     transform: translateX(0);
   }
@@ -692,27 +691,12 @@ a:hover{ text-decoration: underline; }
     opacity: 1;
   }
 
-  /* prevent background scrolling when menu open */
   body.sidebar-open{
     overflow: hidden;
   }
 }
 
-  /* when open */
-  body.sidebar-open .sidebar{
-    transform: translateX(0);
-  }
 
-  body.sidebar-open .backdrop{
-    display: block;
-    opacity: 1;
-  }
-
-  /* prevent background scrolling when menu open */
-  body.sidebar-open{
-    overflow: hidden;
-  }
-}
 
 /* optional: turn hamburger into X when open */
 @media (max-width: 920px){
